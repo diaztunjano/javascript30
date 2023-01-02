@@ -16,10 +16,28 @@ kbd {
   font-size: 4rem;
 }
 
+h1 {
+  font-size: 6rem;
+  color: #ffc660;
+  border: 0.4rem solid #ffc660;
+  border-radius: 0.5rem;
+  border-color: #ffc660;
+  text-shadow: 0 0 0.5rem black;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 5vh;
+  padding-top: 10rem;
+}
+
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  padding-bottom: 10rem;
+  min-height: 80vh;
   /* Para alinear verticalmente: */
   align-items: center;
   /* Para alinear horizontalmente: */

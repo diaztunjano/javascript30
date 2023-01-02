@@ -8,6 +8,9 @@
     <title>JS Drum Kit</title>
   </head>
   <body>
+    <div class="title">
+      <h1>JS Drum Kit</h1>
+    </div>
     <div class="keys">
       <div data-key="65" class="key">
         <kbd>A</kbd>
@@ -59,21 +62,22 @@
   </body>
 
   <script>
-    function playSound(e) {
-      // First, select the corresponding audio matching the key
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      if (!audio) return; // Early return when there is no audio
-      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-      audio.currentTime = 0;
-      audio.play();
-      // Detect a particular key and adds "playing" class to change css format
-      key.classList.add("playing");
-    }
-
     function removeTransition(e) {
       if (e.propertyName !== "transform") return;
       // Only select "transform" event which is the one that is increasing its scale
       this.classList.remove("playing");
+    }
+
+    function playSound(e) {
+      // First, select the corresponding audio matching the key
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      if (!audio) return; // Early return when there is no audio
+
+      // Detect a particular key and adds "playing" class to change css format
+      key.classList.add("playing");
+      audio.currentTime = 0;
+      audio.play();
     }
 
     const keys = document.querySelectorAll(".key");
@@ -82,6 +86,6 @@
       key.addEventListener("transitionend", removeTransition)
     );
 
-    window.addEventListener("keydown", playSound());
+    window.addEventListener("keydown", playSound);
   </script>
 </html>
