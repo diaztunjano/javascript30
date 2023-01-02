@@ -65,7 +65,16 @@
       if (!audio) return; // Early return when there is no audio
       audio.currentTime = 0;
       audio.play();
+      // Detect a particular key and adds "playing" class to change format
       key.classList.add("playing");
     });
+
+    function removeTransition(e) {
+      if (e.propertyName !== "transform") return;
+    }
+    const keys = document.querySelectorAll(".key");
+    keys.forEach((key) =>
+      key.addEventListener("transitionend", removeTransition)
+    );
   </script>
 </html>

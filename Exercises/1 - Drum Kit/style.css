@@ -42,4 +42,7 @@ kbd {
 }
 
 .playing {
+  transform: scale(1.1);
+  border-color: #ffc660;
+  box-shadow: 0 0 10px #ffc660;
 }
