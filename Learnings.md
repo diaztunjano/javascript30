@@ -7,3 +7,5 @@
 ## CSS
 
 - Background con opacidad `(rgba(0,0,0,0.4))` y text-shadow hacen maravillas para resaltar letras. Ver como funciona en la clase .key del ejercicio 1 de drum-kit.
+
+- Aprender cómo funciona position: relative/absolute
