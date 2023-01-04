@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.controls {
+  margin-bottom: 30px;
+}
