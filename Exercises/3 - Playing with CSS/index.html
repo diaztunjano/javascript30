@@ -32,6 +32,19 @@
       <input type="color" name="base" value="#FFC600" />
     </div>
     <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
-    <script></script>
+    <script>
+      const inputs = document.querySelectorAll(".controls input");
+      function updateInput() {
+        const suffix = this.dataset.sizing || "";
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + suffix
+        );
+      }
+      inputs.forEach((input) => input.addEventListener("change", updateInput));
+      inputs.forEach((input) =>
+        input.addEventListener("mousemove", updateInput)
+      );
+    </script>
   </body>
 </html>
