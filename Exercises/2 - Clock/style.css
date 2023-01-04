@@ -32,7 +32,6 @@ body {
   width: 100%;
   height: 100%;
   transform: translateY(-3px);
-  transform: rotate(90deg);
 }
 
 .hand {
@@ -43,4 +42,9 @@ body {
   top: 50%;
   /* Por default, giran sobre su centro. Con 100% se mueve a lo mas extrema derecha */
   transform-origin: 100%;
+  /* Mueve los divs para que queden verticales */
+  transform: rotate(90deg);
+  /* Animacion para la transicion */
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
