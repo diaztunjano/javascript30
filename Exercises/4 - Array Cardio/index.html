@@ -96,7 +96,8 @@
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live all together?
       const allTogether = inventors.reduce(
-        (a, b) => a.passed - a.year + (b.passed - b.year)
+        (total, inventor) => total + (inventor.passed - inventor.year),
+        0
       );
 
       console.log({ allTogether });
@@ -133,7 +134,13 @@
         "car",
         "truck",
       ];
-      const reducedNumbersData = data.filter((a, b) => a === b).length;
+      const reducedNumbersData = data.reduce((obj, item) => {
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
       console.log({ reducedNumbersData });
     </script>
   </body>
